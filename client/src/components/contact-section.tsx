@@ -27,7 +27,13 @@ export default function ContactSection() {
 
   const contactMutation = useMutation({
     mutationFn: async (data: ContactForm) => {
-      const response = await apiRequest("POST", "/api/contact", data);
+      const response = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       return response.json() as Promise<ContactSubmissionResult>;
     },
     onSuccess: (result) => {
