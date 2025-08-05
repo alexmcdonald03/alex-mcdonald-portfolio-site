@@ -10,7 +10,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = contactFormSchema.parse(req.body);
       
       // Create transporter for sending emails
-      const transporter = nodemailer.createTransporter({
+      const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
           user: process.env.EMAIL_USER || 'alexjmcdonald1@gmail.com',

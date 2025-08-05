@@ -1,5 +1,5 @@
-import { User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import headshotImage from "@assets/IMG_7123_1754427373270.jpeg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -43,8 +43,13 @@ export default function HeroSection() {
           </div>
           
           <div className="flex justify-center lg:justify-end">
-            <div className="w-80 h-80 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <User className="h-24 w-24 text-white/70" />
+            <div className="w-80 h-80 rounded-full overflow-hidden backdrop-blur-sm ring-4 ring-white/20">
+              <img 
+                src={headshotImage} 
+                alt="Alex McDonald professional headshot"
+                className="w-full h-full object-cover"
+                data-testid="hero-headshot"
+              />
             </div>
           </div>
         </div>

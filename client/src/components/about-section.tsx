@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import headshotImage from "@assets/IMG_7123_1754427373270.jpeg";
 
 export default function AboutSection() {
   const stats = [
@@ -15,8 +16,8 @@ export default function AboutSection() {
           <div className="w-24 h-1 bg-redbull mx-auto"></div>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          <div>
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          <div className="lg:col-span-2">
             <div className="prose prose-lg text-gray-600 mb-8 space-y-4">
               <p>
                 Hi, I'm Alex McDonald- a strategic communicator and soon-to-be graduate from Carleton University with a BA in Communication & Media Studies (graduating December 2025).
@@ -30,6 +31,19 @@ export default function AboutSection() {
             </div>
           </div>
           
+          <div className="flex justify-center">
+            <div className="w-64 h-64 rounded-lg overflow-hidden shadow-lg">
+              <img 
+                src={headshotImage} 
+                alt="Alex McDonald during his academic exchange with Mediterranean coastal cityscape background"
+                className="w-full h-full object-cover"
+                data-testid="about-headshot"
+              />
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
               <Card key={index} className="text-center card-hover" data-testid={`stat-card-${index}`}>
